@@ -1,0 +1,32 @@
+{
+  "name": "resax",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "npm run build-library",
+    "build-library": "rm -rf ./dist && rollup -c",
+    "postbuild": "npm run publish-library && rm -rf ./dist",
+    "publish-library": "npm publish ./dist"
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^0.0.15",
+    "@radix-ui/react-label": "^0.0.13"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@stitches/react": "^0.2.0-canary.7",
+    "@types/react": "^17.0.11",
+    "@types/react-is": "^17.0.1",
+    "prettier": "^2.3.1",
+    "react-is": "^17.0.2",
+    "rollup": "^2.51.2",
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
