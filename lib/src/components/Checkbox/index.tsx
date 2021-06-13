@@ -63,13 +63,6 @@ const LineCheck2 = styled("span", {
   animationDuration: "300ms",
 });
 
-const CheckIcon = () => (
-  <ContainerCheckIcon>
-    <LineCheck1 />
-    <LineCheck2 />
-  </ContainerCheckIcon>
-);
-
 const StyledLabel = styled(Label.Root, {
   "&:hover": {
     '& [data-state="unchecked"]': {
@@ -94,6 +87,13 @@ const StyledLabel = styled(Label.Root, {
 const ChildrenLabel = styled("div", {
   marginLeft: ".5rem",
 });
+
+const CheckIcon = () => (
+  <ContainerCheckIcon>
+    <LineCheck1 />
+    <LineCheck2 />
+  </ContainerCheckIcon>
+);
 
 export const Checkbox: React.FC = ({ children }) => {
   return (
