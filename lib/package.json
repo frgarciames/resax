@@ -14,6 +14,7 @@
     "@radix-ui/react-label": "^0.0.13"
   },
   "devDependencies": {
+    "@radix-ui/react-polymorphic": "^0.0.11",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
