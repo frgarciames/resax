@@ -2,6 +2,7 @@
   "name": "resax",
   "version": "0.0.1",
   "main": "src/index.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run build-library",
     "build-library": "rm -rf ./dist && rollup -c",
@@ -19,6 +20,7 @@
     "@stitches/react": "^0.2.0-canary.7",
     "@types/react": "^17.0.11",
     "@types/react-is": "^17.0.1",
+    "parcel-bundler": "^1.12.5",
     "prettier": "^2.3.1",
     "react-is": "^17.0.2",
     "rollup": "^2.51.2",
