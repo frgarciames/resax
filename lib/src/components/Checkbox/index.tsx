@@ -9,22 +9,21 @@ import {
   StyledLabel,
 } from './styled'
 
-const CheckIcon: React.FC = () => (
-  <ContainerCheckIcon>
-    <LineCheck1 />
-    <LineCheck2 />
-  </ContainerCheckIcon>
-)
+const CheckIcon: React.ForwardRefExoticComponent<React.RefAttributes<unknown>> =
+  React.forwardRef(() => (
+    <ContainerCheckIcon>
+      <LineCheck1 />
+      <LineCheck2 />
+    </ContainerCheckIcon>
+  ))
 
-type CheckboxComponent = React.ComponentPropsWithRef<typeof StyledCheckbox> & {
-  size: number
-}
+type CheckboxComponent = React.ComponentPropsWithRef<typeof StyledCheckbox>
 
 export const Checkbox: React.FC<CheckboxComponent> = React.forwardRef(
-  ({ children, ...props }, ref) => {
+  ({ children, color = 'primary', ...props }, ref) => {
     return (
-      <StyledLabel hasLabel={!!children}>
-        <StyledCheckbox {...props} ref={ref}>
+      <StyledLabel color={color} hasLabel={!!children}>
+        <StyledCheckbox color={color} ref={ref} {...props}>
           <Indicator as={CheckIcon} />
         </StyledCheckbox>
         {children && <ChildrenLabel>{children}</ChildrenLabel>}

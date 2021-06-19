@@ -25,9 +25,6 @@ export const StyledLabel = styled(Label.Root, {
     '& [data-state="unchecked"]': {
       backgroundColor: '#eee',
     },
-    '& [data-state="checked"]': {
-      boxShadow: '0 3px 15px 0 rgba(26, 93, 255,.35)',
-    },
     cursor: 'pointer',
   },
   variants: {
@@ -36,6 +33,43 @@ export const StyledLabel = styled(Label.Root, {
         display: 'flex',
         alignItems: 'center',
         width: 'fit-content',
+      },
+    },
+    color: {
+      primary: {
+        '&:hover': {
+          '& [data-state="checked"]': {
+            boxShadow: '0 3px 15px 0 $colors$primary100',
+          },
+        },
+      },
+      error: {
+        '&:hover': {
+          '& [data-state="checked"]': {
+            boxShadow: '0 3px 15px 0 $colors$error100',
+          },
+        },
+      },
+      success: {
+        '&:hover': {
+          '& [data-state="checked"]': {
+            boxShadow: '0 3px 15px 0 $colors$success100',
+          },
+        },
+      },
+      warning: {
+        '&:hover': {
+          '& [data-state="checked"]': {
+            boxShadow: '0 3px 15px 0 $colors$warning100',
+          },
+        },
+      },
+      dark: {
+        '&:hover': {
+          '& [data-state="checked"]': {
+            boxShadow: '0 3px 15px 0 $colors$dark100',
+          },
+        },
       },
     },
   },
@@ -57,13 +91,13 @@ export const StyledCheckbox = styled(Root, {
   '&:before': {
     content: '',
     transition: 'all .3s ease',
-    backgroundColor: 'blue',
     position: 'absolute',
     borderRadius: '32%',
-    border: '2px solid blue',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
+    borderWidth: '2px',
+    borderStyle: 'solid',
   },
   "&[data-state='checked']:before": {
     opacity: 1,
@@ -74,6 +108,40 @@ export const StyledCheckbox = styled(Root, {
     opacity: 0,
     width: 0,
     height: 0,
+  },
+  variants: {
+    color: {
+      primary: {
+        '&:before': {
+          backgroundColor: '$primary',
+          borderColor: '$primary',
+        },
+      },
+      success: {
+        '&:before': {
+          borderColor: '$success',
+          backgroundColor: '$success',
+        },
+      },
+      error: {
+        '&:before': {
+          borderColor: '$error',
+          backgroundColor: '$error',
+        },
+      },
+      warning: {
+        '&:before': {
+          borderColor: '$warning',
+          backgroundColor: '$warning',
+        },
+      },
+      dark: {
+        '&:before': {
+          borderColor: '$dark',
+          backgroundColor: '$dark',
+        },
+      },
+    },
   },
 })
 
